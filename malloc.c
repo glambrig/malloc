@@ -153,18 +153,17 @@ void	*my_malloc(size_t size)
 	return (addr);
 }
 
-
+ /*
 int main(void)
 {
-	// char *a = my_malloc(13 + 1);	//small
-	// char *b = my_malloc(42 + 1);	//medium
-	// char *c = my_malloc(222 + 1);	//large
+	 char *a = my_malloc(13 + 1);	//small
+	 char *b = my_malloc(42 + 1);	//medium
+	 char *c = my_malloc(222 + 1);	//large
+ show_alloc_mem();
 
-	// show_alloc_mem();
-
-	// my_free(a);
-	// my_free(b);
-	// my_free(c);
+ my_free(a);
+ my_free(b);
+ my_free(c);
 
 	char *s[100];
 
@@ -179,3 +178,4 @@ int main(void)
 	}
 	return (0);
 }
+*/
