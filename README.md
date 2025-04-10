@@ -3,11 +3,10 @@
 </p>
 
 # Allocating memory has never been so... fun?
-### COUGH COUGGH HUUHHH COUGH COUGH COUGHHHH
 
 In this project, we'll implement some classic libc memory management functions:
 - malloc()
 - free()
 - realloc()
 
-This is done by making use of some special syscalls to map and unmap the memory (more on that later).
+This was done not because I think my functions are better than the real ones, but so that I could gain a better understanding of how memory management is handled under the hood.
