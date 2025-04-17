@@ -3,11 +3,11 @@
 t_alloc_list	*g_alloc_lst = NULL;
 
 /*
-*	Finds the first available node in offset (usually offset == g_alloc_lst).
+*	Finds the first available node in g_alloc_lst.
 *	If the node after that is in use, calculates the size of the gap and
 *	determines if the desired allocation will fit.
-*		If it won't fit, find the next available node and start over. This means calling alloc_from_zone() with offset = t
-*		If at the end it still won't fit, call mmap() ????
+*		If it won't fit, find the next available node and start over.
+*		If at the end it still won't fit, call mmap()
 *	If the node after that is NOT in use, simply allocates 'size' bytes in the zone.
 */
 
@@ -52,7 +52,6 @@ char	*alloc_from_zone(size_t size, char *zone_ptr, u_int16_t alloc_type)
 		}
 	}
 	//we reached the end of g_alloc_lst without finding a single available node
-	write(2, "oopsie\n", 8);
 	return (NULL);
 }
 
@@ -147,7 +146,6 @@ void	*my_malloc(size_t size)
 			perror("mmap");
 			exit(EXIT_FAILURE);
 		}
-		printf("MMAP CALLED\n");/////////
 	}
 	update_alloc_lst(size, addr, ADD_ENTRY, &g_alloc_lst_size);
 	return (addr);
@@ -156,14 +154,15 @@ void	*my_malloc(size_t size)
  /*
 int main(void)
 {
-	 char *a = my_malloc(13 + 1);	//small
-	 char *b = my_malloc(42 + 1);	//medium
-	 char *c = my_malloc(222 + 1);	//large
- show_alloc_mem();
+	// char *a = my_malloc(13 + 1);	//small
+	// char *b = my_malloc(42 + 1);	//medium
+	// char *c = my_malloc(222 + 1);	//large
+ 	
+	// show_alloc_mem();
 
- my_free(a);
- my_free(b);
- my_free(c);
+ 	// my_free(a);
+ 	// my_free(b);
+ 	// my_free(c);
 
 	char *s[100];
 
